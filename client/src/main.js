@@ -6,6 +6,7 @@ import router from './router'
 import { Laue } from 'laue';
 import { Cartesian } from 'laue';
 
+
 Vue.config.productionTip = false
 Vue.use(Laue);
 Vue.component(Cartesian.name, Cartesian);

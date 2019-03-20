@@ -5,7 +5,7 @@ export default {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve()
-      }, 500);
+      }, 100);
     })
     .then(() => Api().get('statistic'));
   }
