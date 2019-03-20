@@ -1,5 +1,6 @@
 .DS_Store
 **/node_modules/
+**/*.code-workspace
 client/dist/
 client/npm-debug.log*
 client/yarn-debug.log*

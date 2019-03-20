@@ -2,6 +2,11 @@ import Api from '@/services/Api'
 
 export default {
   fetchStatistic () {
-    return Api().get('statistic')
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve()
+      }, 500);
+    })
+    .then(() => Api().get('statistic'));
   }
 }
