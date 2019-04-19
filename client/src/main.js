@@ -3,13 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { Laue } from 'laue';
-import { Cartesian } from 'laue';
-
+import { Laue, Cartesian } from 'laue'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false
-Vue.use(Laue);
-Vue.component(Cartesian.name, Cartesian);
+Vue.use(Laue)
+Vue.component(Cartesian.name, Cartesian)
+Vue.use(BootstrapVue)
 
 /* eslint-disable no-new */
 new Vue({

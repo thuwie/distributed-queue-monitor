@@ -1,0 +1,12 @@
+---
+applications:
+  - name: monitserver
+    instances: 1
+    memory: 160M
+    disk_quota: 128M
+    health-check-type: process
+    timeout: 60
+    command: nodemon src/server.js
+    buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+    services:
+      - mongoqueue

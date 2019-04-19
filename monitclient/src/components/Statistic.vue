@@ -3,7 +3,10 @@
   <div class="statistic">
     <h1>Statistic</h1>
     <div v-if="statistic.length > 0">
-      <la-cartesian :bound="[0, n => n + 1000]" :data="statistic" :autoresize="true" :showValue="true">
+      <la-cartesian :bound="[0, n => n + 1000]"
+                    :data="statistic"
+                    :autoresize="true"
+                    :showValue="true">
           <la-line dot curve :width="4" prop="totalCount" label="Total count"></la-line>
           <la-line dot curve :width="4" prop="fetchedCount" label="Fetched count"></la-line>
           <la-x-axis prop="timestamp"></la-x-axis>
@@ -18,22 +21,22 @@
 </template>
 
 <script>
-import StatisticService from '@/services/StatisticService'
+import StatisticService from '@/services/StatisticService';
 
 export default {
   name: 'statistic',
-  data () {
+  data() {
     return {
-      statistic: []
-    }
+      statistic: [],
+    };
   },
-  mounted () {
-    this.getStatistic()
+  mounted() {
+    this.getStatistic();
   },
   methods: {
-    async getStatistic () {
-      const response = await StatisticService.fetchStatistic()
-      this.statistic = response.data.statistic
+    async getStatistic() {
+      const response = await StatisticService.fetchStatistic();
+      this.statistic = response.data.statistic;
       const date = new Date();
       for (const stat in this.statistic) {
         if (this.statistic[stat].hasOwnProperty('timestamp')) {
@@ -41,14 +44,12 @@ export default {
           this.statistic[stat].timestamp = date.toUTCString();
         }
       }
-    }
+    },
   },
   watch: {
-    statistic: function () {
-      return this.getStatistic()
-    }
-  }
-}
+    statistic: () => this.getStatistic(),
+  },
+};
 </script>
 <style type="text/css">
 table th, table tr {

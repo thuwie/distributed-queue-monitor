@@ -5,8 +5,7 @@ export default {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve()
-      }, 100);
-    })
-    .then(() => Api().get('statistic'));
-  }
+      }, 5000)
+    }).then(() => Api().get('statistic'))
+  },
 }
